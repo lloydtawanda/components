@@ -24,7 +24,7 @@
 
  */
 
-import React, { forwardRef, Ref, useState } from 'react'
+import React, { forwardRef, Ref } from 'react'
 import styled from 'styled-components'
 import {
   CompatibleHTMLProps,

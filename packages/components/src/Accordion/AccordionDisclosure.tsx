@@ -50,7 +50,7 @@ import { accordionDefaults } from './accordionDefaults'
 export interface AccordionDisclosureProps
   extends TypographyProps,
     Omit<AccordionDisclosureStyleProps, 'focusVisible'>,
-    GenericClickProps<HTMLDivElement>,
+    GenericClickProps<HTMLElement>,
     SimpleLayoutProps,
     AccordionControlProps,
     AccordionIndicatorProps {

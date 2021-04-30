@@ -36,6 +36,7 @@ export interface TreeProps
       | 'indicatorGap'
       | 'indicatorPosition'
       | 'indicatorSize'
+      | 'onClick'
     >,
     ListItemProps {
   /**

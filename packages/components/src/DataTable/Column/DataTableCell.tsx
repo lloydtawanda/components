@@ -30,13 +30,12 @@ import { CompatibleHTMLProps } from '@looker/design-tokens'
 import { Space, SpaceVertical } from '../../Layout'
 import { Paragraph } from '../../Text'
 import { Truncate } from '../../Truncate'
-import { FocusVisibleProps, useFocusVisible, useForkedRef } from '../../utils'
+import { useFocusVisible, useForkedRef } from '../../utils'
 import { columnSize, DataTableColumnSize } from './columnSize'
 import { FocusableCell } from './FocusableCell'
 
 export interface DataTableCellProps
-  extends FocusVisibleProps,
-    CompatibleHTMLProps<HTMLTableDataCellElement> {
+  extends CompatibleHTMLProps<HTMLTableDataCellElement> {
   /**
    * I18n recommended: content that is user visible should be treated for i18n
    */

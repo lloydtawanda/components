@@ -24,11 +24,11 @@
 
  */
 
-import { createContext, MouseEvent as ReactMouseEvent } from 'react'
+import { createContext, MouseEvent } from 'react'
 
 export type ButtonSetCallback<TValue extends string | string[] = string[]> = (
   option: TValue,
-  event?: ReactMouseEvent<HTMLButtonElement, MouseEvent>
+  event?: MouseEvent<HTMLButtonElement>
 ) => void
 
 export interface ButtonSetContextProps<
@@ -36,13 +36,9 @@ export interface ButtonSetContextProps<
 > {
   disabled?: boolean
   value?: TValue
-  onItemClick: (event: ReactMouseEvent<HTMLButtonElement, MouseEvent>) => void
+  onItemClick?: (event: MouseEvent<HTMLButtonElement>) => void
 }
 
-const buttonSetContext: ButtonSetContextProps = {
-  onItemClick: () => {
-    //
-  },
-}
+const buttonSetContext: ButtonSetContextProps = {}
 
 export const ButtonSetContext = createContext(buttonSetContext)

@@ -24,7 +24,7 @@
 
  */
 
-import React, { forwardRef, Ref, useContext } from 'react'
+import React, { forwardRef, MouseEvent, Ref, useContext } from 'react'
 import styled, { css } from 'styled-components'
 import {
   CompatibleHTMLProps,
@@ -36,14 +36,12 @@ import {
   focusVisibleCSSWrapper,
   FocusVisibleProps,
   useFocusVisible,
-  useWrapEvent,
 } from '../utils'
 import { inputHeight } from '../Form/Inputs/height'
 import { ButtonSetContext } from './ButtonSetContext'
 
 export interface ButtonItemProps
   extends SpaceProps,
-    FocusVisibleProps,
     Omit<CompatibleHTMLProps<HTMLButtonElement>, 'type' | 'aria-pressed'> {
   value?: string
 }
@@ -57,7 +55,12 @@ const ButtonLayout = forwardRef(
       ButtonSetContext
     )
 
-    const handleClick = useWrapEvent(onItemClick, onClick)
+    function handleClick(e: MouseEvent<HTMLButtonElement>) {
+      onClick && onClick(e)
+      if (!e.defaultPrevented) {
+        onItemClick && onItemClick(e)
+      }
+    }
 
     const focusVisibleProps = useFocusVisible({ onBlur, onKeyUp })
 
@@ -90,7 +93,7 @@ ButtonLayout.displayName = 'ButtonLayout'
 
 const ButtonOuter = styled.button.attrs(({ type = 'button' }) => ({
   type,
-}))<ButtonItemProps>`
+}))<ButtonItemProps & FocusVisibleProps>`
   ${focusVisibleCSSWrapper(
     ({ theme }) => css`
       box-shadow: 0 0 0.5px 1px ${theme.colors.keyFocus};
