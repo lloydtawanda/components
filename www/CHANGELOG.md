@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0-alpha.3](https://github.com/looker-open-source/components/compare/v1.2.0-alpha.2...v1.2.0-alpha.3) (2021-04-30)
+
+
+### Features
+
+* **Tree:** ARIA-labeling ([#2271](https://github.com/looker-open-source/components/issues/2271)) ([#2280](https://github.com/looker-open-source/components/issues/2280)) ([99b28a5](https://github.com/looker-open-source/components/commit/99b28a5fb275476aa94409cd1f9de76e0edfa75f))
+
+
+
+
+
 # [1.2.0-alpha.2](https://github.com/looker-open-source/components/compare/v1.2.0-alpha.1...v1.2.0-alpha.2) (2021-04-28)
 
 
