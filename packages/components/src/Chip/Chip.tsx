@@ -32,9 +32,9 @@ import { maxWidth, MaxWidthProps } from 'styled-system'
 import { Close } from '@styled-icons/material/Close'
 import {
   useClickable,
+  GenericClickProps,
   focusVisibleCSSWrapper,
   FocusVisibleProps,
-  GenericClickProps,
   useWrapEvent,
 } from '../utils'
 import { IconButton } from '../Button/IconButton'

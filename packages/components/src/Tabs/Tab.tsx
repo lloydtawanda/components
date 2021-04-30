@@ -134,11 +134,11 @@ const TabJSX = forwardRef((props: TabProps, ref: Ref<HTMLButtonElement>) => {
       aria-selected={selected}
       disabled={disabled}
       id={`tab-${index}`}
+      onClick={handleClick}
       ref={ref}
       role="tab"
       selected={selected}
       tabIndex={-1}
-      onClick={handleClick}
       {...focusVisibleProps}
       {...restProps}
     >

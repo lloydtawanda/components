@@ -45,9 +45,18 @@ export interface DataTableCellProps
 }
 
 const DataTableCellLayout = forwardRef(
-  (props: DataTableCellProps, forwardedRef: Ref<HTMLElement>) => {
-    const { children, description, indicator, onBlur, onKeyUp, size } = props
-
+  (
+    {
+      children,
+      description,
+      indicator,
+      onBlur,
+      onKeyUp,
+      size,
+      ...props
+    }: DataTableCellProps,
+    forwardedRef: Ref<HTMLElement>
+  ) => {
     const focusVisibleProps = useFocusVisible({ onBlur, onKeyUp })
 
     let content =

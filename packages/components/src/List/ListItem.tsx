@@ -139,7 +139,6 @@ const ListItemInternal = forwardRef(
       onBlur,
       onClick,
       onClickWhitespace,
-      onKeyDown,
       onKeyUp,
       onMouseEnter,
       onMouseLeave,
@@ -168,12 +167,6 @@ const ListItemInternal = forwardRef(
     const handleOnClick = (event: React.MouseEvent<HTMLElement>) => {
       if (itemRole !== 'none' && onClick) {
         onClick(event)
-      }
-    }
-
-    const handleOnClickWhitespace = (event: React.MouseEvent<HTMLElement>) => {
-      if (event.currentTarget === event.target) {
-        onClickWhitespace && onClickWhitespace(event)
       }
     }
 
@@ -257,7 +250,6 @@ const ListItemInternal = forwardRef(
         height={itemDimensions.height}
         href={href}
         onClick={disabled ? undefined : handleOnClick}
-        onKeyDown={onKeyDown}
         rel={createSafeRel(rel, target)}
         role={role || 'listitem'}
         target={target}
@@ -286,6 +278,12 @@ const ListItemInternal = forwardRef(
         {renderedChildren}
       </Layout>
     )
+
+    const handleOnClickWhitespace = (event: React.MouseEvent<HTMLElement>) => {
+      if (event.currentTarget === event.target) {
+        onClickWhitespace && onClickWhitespace(event)
+      }
+    }
 
     return (
       <HoverDisclosureContext.Provider value={{ visible: hovered }}>
