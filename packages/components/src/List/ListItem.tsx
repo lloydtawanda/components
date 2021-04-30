@@ -257,6 +257,7 @@ const ListItemInternal = forwardRef(
         height={itemDimensions.height}
         href={href}
         onClick={disabled ? undefined : handleOnClick}
+        onKeyDown={onKeyDown}
         rel={createSafeRel(rel, target)}
         role={role || 'listitem'}
         target={target}

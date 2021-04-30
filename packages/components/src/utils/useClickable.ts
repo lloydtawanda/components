@@ -86,6 +86,6 @@ export function useClickable<E extends HTMLElement>({
       role: role || (onClick ? 'button' : undefined),
       tabIndex: disabled ? undefined : 0,
     }),
-    [disabled, role, onClick, onClick, onKeyUp, focusVisibleProps]
+    [disabled, role, onClick, onKeyUp, focusVisibleProps]
   )
 }
