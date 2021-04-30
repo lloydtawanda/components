@@ -79,7 +79,6 @@ const AccordionDisclosureInternal: FC<AccordionDisclosureProps> = forwardRef(
       disabled,
       onBlur,
       onClick: propsOnClick,
-      onKeyDown,
       onKeyUp,
       defaultOpen,
       isOpen,

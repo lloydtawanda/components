@@ -98,12 +98,14 @@ describe('Accordion', () => {
 
   // TODO: Move handler props to Accordion during AccordionDisclosure refactor PR
   test('Wraps handlers passed into AccordionDisclosure', () => {
+    const handleKeyDown = jest.fn()
     const handleKeyUp = jest.fn()
     const handleClick = jest.fn()
     const handleBlur = jest.fn()
 
     renderWithTheme(
       <Accordion
+        onKeyDown={handleKeyDown}
         onKeyUp={handleKeyUp}
         onClick={handleClick}
         onBlur={handleBlur}
@@ -118,6 +120,10 @@ describe('Accordion', () => {
     expect(handleClick).toHaveBeenCalled()
     fireEvent.blur(accordionLabel)
     expect(handleBlur).toHaveBeenCalled()
+    fireEvent.keyDown(accordionLabel, {
+      key: 'Enter',
+    })
+    expect(handleKeyDown).toHaveBeenCalled()
     fireEvent.keyUp(accordionLabel, {
       key: 'Enter',
     })
