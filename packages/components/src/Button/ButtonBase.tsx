@@ -86,8 +86,8 @@ export const buttonIconSize = css<ButtonProps>`
   }
 `
 
-type ButtonBaseProps = ButtonProps & ToggleColorProps
-type ButtonOuterProps = ButtonBaseProps & FocusVisibleProps
+type ButtonLayoutProps = ButtonProps & ToggleColorProps
+type ButtonOuterProps = ButtonLayoutProps & FocusVisibleProps
 
 const ButtonOuter = styled.button
   .withConfig({ shouldForwardProp })
@@ -96,8 +96,8 @@ const ButtonOuter = styled.button
   ${({ fullWidth }) => fullWidth && `width: 100%;`}
 `
 
-const ButtonJSX = forwardRef(
-  (props: ButtonBaseProps, ref: Ref<HTMLButtonElement>) => {
+const ButtonLayout = forwardRef(
+  (props: ButtonLayoutProps, ref: Ref<HTMLButtonElement>) => {
     const {
       children,
       iconBefore,
@@ -126,11 +126,11 @@ const ButtonJSX = forwardRef(
   }
 )
 
-ButtonJSX.displayName = 'ButtonJSX'
+ButtonLayout.displayName = 'ButtonLayout'
 
-export const GenericButtonBase = styled(ButtonJSX)<ButtonProps>``
+export const GenericButtonBase = styled(ButtonLayout)``
 
-export const ButtonBase = styled(GenericButtonBase)<ButtonProps>`
+export const ButtonBase = styled(GenericButtonBase)`
   ${buttonIcon}
   ${buttonIconSize}
 `
